@@ -96,7 +96,7 @@ try:
 except KeyboardInterrupt:
     print("\n仿真停止")
 
-# ====================== 绘图（优化版 - 避免中文警告） ======================
+# ====================== 绘图（最终优化版） ======================
 plt.rcParams['axes.unicode_minus'] = False
 
 plt.figure(figsize=(12, 8))
@@ -104,7 +104,7 @@ plt.figure(figsize=(12, 8))
 plt.subplot(3,1,1)
 plt.plot(fears, label='Fear Level', color='red')
 plt.ylabel('Fear Level')
-plt.title('Multi-Resonance-BCI Simulation Result (±2048 Scaling)')
+plt.title('Multi-Resonance-BCI Closed-Loop Simulation (±2048 Scaling)')
 plt.grid(True)
 plt.legend()
 
@@ -123,12 +123,12 @@ plt.legend()
 
 plt.tight_layout()
 
-# 保存图片（推荐方式）
+# 保存图片（推荐）
 plt.savefig('../simulation_result.png', dpi=150, bbox_inches='tight')
-print("\n✅ 仿真结果已保存为: simulation_result.png")
+print("\n✅ 仿真结果图片已保存: simulation_result.png")
 
-# 尝试显示（在无界面环境会自动跳过）
+# 避免非交互环境报错
 try:
     plt.show()
 except:
-    print("当前环境无法显示窗口，已保存图片文件。")
+    print("当前为无界面环境，图片已保存。")
