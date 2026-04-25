@@ -96,24 +96,32 @@ try:
 except KeyboardInterrupt:
     print("\n仿真停止")
 
-# ====================== 绘图 ======================
+# ====================== 绘图（优化中文支持） ======================
+plt.rcParams['font.sans-serif'] = ['DejaVu Sans']  # 临时避免中文警告
+plt.rcParams['axes.unicode_minus'] = False
+
 plt.figure(figsize=(12, 8))
+
 plt.subplot(3,1,1)
 plt.plot(fears, label='Fear Level', color='red')
 plt.ylabel('Fear')
 plt.legend()
+plt.grid(True)
 
 plt.subplot(3,1,2)
 plt.plot(Rs, label='Resonance Rate R', color='blue')
 plt.ylabel('R Value')
 plt.legend()
+plt.grid(True)
 
 plt.subplot(3,1,3)
 plt.plot(I_gvs_history, label='GVS Current', color='green')
 plt.xlabel('Time Step (80ms)')
 plt.ylabel('GVS (mA)')
 plt.legend()
+plt.grid(True)
 
 plt.suptitle('Multi-Resonance-BCI 闭环仿真结果 (±2048 定标)')
 plt.tight_layout()
+plt.savefig('simulation_result.png', dpi=150)   # 保存为图片（推荐）
 plt.show()
