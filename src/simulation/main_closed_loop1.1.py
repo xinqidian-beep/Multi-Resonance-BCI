@@ -1,6 +1,6 @@
 # -*- coding:  utf-8 -*-
 """
-Multi-Resonance-BCI 仿真主程序
+Multi-Resonance-BCI 仿真主程序1.1
 ±2048 整数定标 + 多维 R 闭环演示
 """
 
