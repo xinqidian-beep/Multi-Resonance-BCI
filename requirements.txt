@@ -1,1 +1,8 @@
 
+# Multi-Resonance-BCI 项目依赖
+matplotlib>=3.8.0
+numpy>=1.26.0
+
+# 可选：如果后续要做实时绘图或数据处理
+scipy>=1.11.0
+pandas>=2.1.0
